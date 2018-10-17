@@ -9,6 +9,8 @@ ExecStartPre=-/usr/bin/docker rm monocled
 ExecStart=/usr/bin/docker run \
   -v /volumes/monocle:/data \
   -v /etc/localtime:/etc/localtime:ro \
+  --log-opt max-size=50m \
+  --log-opt max-file=5 \
   --rm --name monocled \
   monocle
 ExecStop=/usr/bin/docker stop monocled
