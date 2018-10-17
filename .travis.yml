@@ -5,7 +5,7 @@ services:
 script:
 - docker build -t monocle .
 - docker tag monocle:latest $DOCKER_HUB_USERNAME/monocle:latest
-- docker login -u="$DOCKER_HUB_USERNAME" -p="$DOCKER_HUB_PASSWORD"
+- echo "$DOCKER_HUB_PASSWORD" | docker login -u="$DOCKER_HUB_USERNAME" --password-stdin
 - docker push $DOCKER_HUB_USERNAME/monocle:latest
 env:
   secure: "rku3I9QFkAPZZNOGA+LXhMqvYYH2EG+5yZq0v9e18NvKYk+3ZqsBC+8rUF9Z256hcpLMSEH0Sn0EEZOl0qKUVCwgryWz9pI/VYJP1sClSXUA3QAsKd2nvCJq4pb1xaS9xNV2RPmVyle6HNVbQoYRbCBO+M5vn6CUXD0957wz6hOQAuNC3yWN+QG43YJ0AyiMuDccSsIZaTpwVR6XLLXJXDF9T96KJaxzSWwDa4rmlH+6nocakG7GXwypXywSSvzpPLEHJiW+3Xmnk5RgTPojQ4ReRKepERVO9xwBwbOGox/mlaH6JQXFNs8cMpUE41GstjPnAfq4d7SWLRCW/MkjibOQ4Vk00m0nJPOcMEi/5okZ9ndYPK3bwXkKfyml/BtXHZgAfrHbJdBIswv1nn2SPZ9PcQUt9QhKm2SFMHFvqlbjAd2/bZSBmdfeHFoPmr7WLvjUmEcE0kvO3VgO2ku/g21d9DjJUqA3v7jzdRrA3Hup8rHCl7G+JOPGR7eOVwscB9JNpCn2UT8mBD+ujxTo+BpAh0+wpmrI8YErPqrgk2PixVBKNoef5E12uR/JdUTbbhVT57TF3FTCvvKxdwgXliWvwK3mlJTLztXd114E8ZxUJvOVTAE8tFc/juQkHotbEbOuGRX9ELJVQukjfTonVMQWumI7g9lMrB6hbDGrNSk="
